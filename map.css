@@ -26,8 +26,9 @@ html, body {
 
   #map svg circle {
     fill: mediumslateblue;       /* Fill color for the circles */
-    fill-opacity: 0.4;     /* 60% opacity for the fill */
+    fill-opacity: 0.5;     /* 60% opacity for the fill */
     stroke: white;         /* Stroke color for the circles */
     stroke-width: 1;       /* Stroke thickness */
     stroke-opacity: 1;     /* Fully opaque stroke */
+    pointer-events: auto;
   }
