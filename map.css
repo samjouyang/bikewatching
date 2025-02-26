@@ -34,7 +34,7 @@ html, body {
   }
 
 
-
+/* 
   #time-filter {
     margin: 1em 0;
     font-family: system-ui, sans-serif;
@@ -53,9 +53,9 @@ html, body {
   #time-filter time,
   #time-filter em {
     font-weight: bold;
-    min-width: 80px; /* Ensure consistent width for time and "any time" */
-    text-align: right; /* Align text to the right */
-    display: inline-block; /* Ensure they behave as inline blocks */
+    min-width: 80px;
+    text-align: right; 
+    display: inline-block; 
   }
   
   #time-filter em {
@@ -63,12 +63,32 @@ html, body {
     color: #666;
   }
   
-  /* Hide <time> when no time is selected */
+
   #time-filter time:empty {
-    visibility: hidden; /* Hide but keep space */
+    visibility: hidden; 
   }
   
-  /* Hide <em> when a time is selected */
+
   #time-filter em.hidden {
     display: none;
+  } */
+
+
+
+
+  label {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  #selected-time {
+    display: block;
+    font-weight: bold;
+  }
+  
+  #any-time {
+    display: block;
+    font-style: italic;
   }
