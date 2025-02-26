@@ -32,3 +32,43 @@ html, body {
     stroke-opacity: 1;     /* Fully opaque stroke */
     pointer-events: auto;
   }
+
+
+
+  #time-filter {
+    margin: 1em 0;
+    font-family: system-ui, sans-serif;
+  }
+  
+  #time-filter label {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  
+  #time-filter input[type="range"] {
+    width: 200px;
+  }
+  
+  #time-filter time,
+  #time-filter em {
+    font-weight: bold;
+    min-width: 80px; /* Ensure consistent width for time and "any time" */
+    text-align: right; /* Align text to the right */
+    display: inline-block; /* Ensure they behave as inline blocks */
+  }
+  
+  #time-filter em {
+    font-style: italic;
+    color: #666;
+  }
+  
+  /* Hide <time> when no time is selected */
+  #time-filter time:empty {
+    visibility: hidden; /* Hide but keep space */
+  }
+  
+  /* Hide <em> when a time is selected */
+  #time-filter em.hidden {
+    display: none;
+  }
