@@ -34,47 +34,6 @@ html, body {
   }
 
 
-/* 
-  #time-filter {
-    margin: 1em 0;
-    font-family: system-ui, sans-serif;
-  }
-  
-  #time-filter label {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-  }
-  
-  #time-filter input[type="range"] {
-    width: 200px;
-  }
-  
-  #time-filter time,
-  #time-filter em {
-    font-weight: bold;
-    min-width: 80px;
-    text-align: right; 
-    display: inline-block; 
-  }
-  
-  #time-filter em {
-    font-style: italic;
-    color: #666;
-  }
-  
-
-  #time-filter time:empty {
-    visibility: hidden; 
-  }
-  
-
-  #time-filter em.hidden {
-    display: none;
-  } */
-
-
-
 
   label {
     margin-left: auto;
@@ -92,3 +51,70 @@ html, body {
     display: block;
     font-style: italic;
   }
+
+
+
+  #map svg circle {
+    --color-departures: steelblue;
+    --color-arrivals: darkorange;
+    --color: color-mix(
+      in oklch,
+      var(--color-departures) calc(100% * var(--departure-ratio)),
+      var(--color-arrivals)
+    );
+    fill: var(--color);
+    fill-opacity: 0.5;     /* 60% opacity for the fill */
+    stroke: white;         /* Stroke color for the circles */
+    stroke-width: 1;       /* Stroke thickness */
+    stroke-opacity: 1;     /* Fully opaque stroke */
+    pointer-events: auto;
+  }
+
+
+
+
+
+  #map svg circle,
+.legend > div {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+}
+
+/* Style for the circles */
+#map svg circle {
+  fill: var(--color);
+  /* fill-opacity: 0.5; */
+  stroke: white;         /* Stroke color for the circles */
+  stroke-width: 1;       /* Stroke thickness */
+  stroke-opacity: 1;     /* Fully opaque stroke */
+  pointer-events: auto;
+}
+
+/* Style for the legend container */
+.legend {
+  display: flex;          /* Use flexbox to align items horizontally */
+  gap: 1em;               /* Add space between legend items */
+  margin-block: 1em;      /* Add vertical margin to separate the legend from the map */
+  padding: 0.5em;         /* Add some padding for better spacing */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background for better readability */
+  border-radius: 8px;     /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Style for the legend items */
+.legend > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;             /* Add space between the color swatch and text */
+  padding: 0.5em;         /* Add padding for better spacing */
+  border-radius: 4px;     /* Rounded corners for legend items */
+  background: var(--color); /* Use the same color logic as the circles */
+  color: white;           /* White text for better contrast */
+  font-size: 0.9em;       /* Adjust font size */
+  font-weight: bold;      /* Bold text for better readability */
+}
